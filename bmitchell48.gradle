@@ -1,0 +1,21 @@
+//Import a bunch of java related tasks like compileJava, compileJavaTest, clean, javadoc, jar
+apply plugin: 'java'
+
+sourceCompatibility = 1.7
+version = '1.0'
+defaultTasks 'jar'
+
+dependencies {
+    compile files('lib/resources.jar')
+}
+
+// These lines allow gradle to generate and insert a manifest when building a .jar
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Milestone 2', 'Implementation-Version': version , 'Main-Class' : 'edu.gatech.oad.antlab.pkg1.AntLabMain' , 'Class-Path' : '../../lib/resources.jar'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
