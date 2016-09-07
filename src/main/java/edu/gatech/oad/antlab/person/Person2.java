@@ -33,8 +33,8 @@ public class Person2 {
 	 */
 	private String calc(String input) {
 	  //Person 2 put your implementation here
-	  ArrayList al = new ArrayList();
-	  char[] chars = s.toCharArray();
+	  ArrayList al = new ArrayList<String>();
+	  char[] chars = input.toCharArray();
 	  for(int i = 0; i < chars.length; i++)
 	    al.add(chars[i]);
 	  char[] newChars = new char[chars.length];
