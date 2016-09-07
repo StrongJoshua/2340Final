@@ -30,10 +30,14 @@ public class Person5 {
 	 * @return the modified string
 	 */
 	private String calc(String input) {
-	  //Person 5 put your implementation here
-	  return null;
+	  if (input.length() < 3) {
+	  	return input;
+	  }
+	  input = input.substring(2, input.length() - 1)
+			  + input.substring(0, 1);
+	  return input;
 	}
-	
+
 	/**
 	 * Return a string rep of this object
 	 * that varies with an input string
