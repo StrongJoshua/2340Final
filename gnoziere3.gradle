@@ -1,0 +1,16 @@
+// setting default task to jar
+defaultTasks 'jar'
+
+// importing java pluging
+apply plugin: 'java'
+
+// compileJava task
+task compileJava {
+    options.fork = true
+    options.incremental = true
+}
+
+// compileTest task
+task compileTest {
+
+}
