@@ -1,16 +1,26 @@
 // setting default task to jar
 defaultTasks 'jar'
 
-// importing java pluging
+// importing java plugin
 apply plugin: 'java'
 
-// compileJava task
-task compileJava {
-    options.fork = true
-    options.incremental = true
+// updating version and compatibility
+//sourceCompatibility = 1.8
+version = '1.0'
+
+// defining the contents of the jar
+//noinspection GroovyAssignabilityCheck
+jar {
+    manifest {
+        attributes 'Implementation-Title' : 'Milestone',
+                'Implementation-Version' : version,
+                'Main-Class' : 'edu.gatech.oad.antlab.pkg1.AntLabMain',
+                'Class-Path' : '../../lib/resources.jar'
+    }
 }
 
-// compileTest task
-task compileTest {
-
+// setting up dependencies
+//noinspection GroovyAssignabilityCheck
+dependencies {
+    compile files('lib/resources.jar')
 }
